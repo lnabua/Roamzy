@@ -3,7 +3,7 @@ import { Card, CardActionArea, CardMedia, CardContent, Typography } from '@mui/m
 
 const VehicleCard = ({ name, price, image }) => {
     return (
-        <Card sx={{ maxWidth: 300 }}>
+        <Card sx={{ maxWidth: 345 }}>
         <CardActionArea>
             <CardMedia
             component="img"

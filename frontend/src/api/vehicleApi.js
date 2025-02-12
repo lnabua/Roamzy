@@ -14,7 +14,7 @@ export const getVehicles = async () => {
 // CREATE A VEHICLE
 export const createVehicle = async (vehicle) => {
     try {
-        const response = await axiosClient.post('/vehicles', vehicles);
+        const response = await axiosClient.post('/vehicles', vehicle);
         return response.data;
     } catch (error) {
         console.error('Error creating vehicle:', error);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getVehicles } from "../api/vehicleApi";
-import { Box, Container, CircularProgress, Alert, Typography, Grid } from "@mui/material";
+import { Box, Container, CircularProgress, Alert, Typography } from "@mui/material";
 import VehicleCard from "./VehicleCard";
 
 const VehicleList = () => {
@@ -30,17 +30,17 @@ const VehicleList = () => {
     return (
         <Container>
             <Typography variant="h4" gutterBottom>Vehicle List</Typography>
-            <Grid container spacing={4}>
+            <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 3 }}>
                 {vehicles.map((vehicle) => (
-                <Grid item key={vehicle._id} xs={12} sm={6} md={4}>
+                <Box key={vehicle._id}>
                     <VehicleCard
                     name={vehicle.name}
-                    price={vehicle.price}
-                    image={vehicle.image}
+                    description={vehicle.description}
+                    image={vehicle.image || '/path/to/default/image.jpg'}
                     />
-                </Grid>
+                </Box>
                 ))}
-            </Grid>
+            </Box>
         </Container>
     );
 };
