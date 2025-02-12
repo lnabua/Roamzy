@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getVehicles } from "../api/vehicleApi";
+import { Container } from "@mui/material";
 
 const VehicleList = () => {
     const [vehicles, setVehicles] = useState([]);
@@ -22,14 +23,14 @@ const VehicleList = () => {
     if (loading) return <p>Loading...</p>;
 
     return (
-        <div>
+        <Container>
             <h2>Vehicle List</h2>
             <ul>
                 {vehicles.map((vehicle) => (
                     <li key={vehicle._id}>{vehicle.name}</li>
                 ))}
-            </ul>
-        </div>
+            </ul>   
+        </Container>
     );
 };
 
